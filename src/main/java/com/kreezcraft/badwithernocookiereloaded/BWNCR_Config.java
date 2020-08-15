@@ -1,9 +1,9 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
+import net.minecraftforge.common.ForgeConfigSpec;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import net.minecraftforge.common.ForgeConfigSpec;
 
 public class BWNCR_Config {
 	
