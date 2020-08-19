@@ -34,14 +34,16 @@ interface SideProxy {
     /**
      * Only created on dedicated servers.
      */
-    static class Server implements SideProxy {
+   /* static class Server implements SideProxy {
 
 		@Override
 		public void clientSetup(FMLClientSetupEvent event) {}
 
+*//*
 		@Override
 		public void serverStarting(FMLServerStartingEvent event) {
 			ListenCommand.register(event.getCommandDispatcher());
 		}
-    }
+*//*
+    }*/
 }

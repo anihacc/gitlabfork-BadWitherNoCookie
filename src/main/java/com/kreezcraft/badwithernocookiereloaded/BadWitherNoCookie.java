@@ -24,19 +24,19 @@ public class BadWitherNoCookie {
 	public static  boolean whatWasThat = false;
 	public static PlayerEntity player;
 	
-	public static SideProxy proxy = DistExecutor.runForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
+	//public static SideProxy proxy = DistExecutor.runForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
 
 	public BadWitherNoCookie() {
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BWNCR_Config.spec);
+		/*ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BWNCR_Config.spec);
 		
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(BadWitherNoCookie::clientSetup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(BadWitherNoCookie::clientSetup);*/
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		instance = this;
 	}
 
-	private static void clientSetup(FMLClientSetupEvent event) {
+	/*private static void clientSetup(FMLClientSetupEvent event) {
     	proxy.clientSetup(event);
     }
 	
@@ -45,5 +45,5 @@ public class BadWitherNoCookie {
 		//proxy.serverStarting(event);
 		ListenCommand.register(event.getCommandDispatcher());
 	}
-
+*/
 }
