@@ -1,9 +1,9 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import net.minecraftforge.common.ForgeConfigSpec;
 
 public class BWNCR_Config {
 	
@@ -15,16 +15,21 @@ public class BWNCR_Config {
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceWither;
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceDragon;
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceLightning;
-		public final ForgeConfigSpec.ConfigValue<Boolean> silenceSuccess;
+		public final ForgeConfigSpec.ConfigValue<Boolean> debugMode;
+		public final ForgeConfigSpec.ConfigValue<Boolean> silenceTrader;
 		private static List<String> DefaultValue = new ArrayList<String>();
 		public final ForgeConfigSpec.ConfigValue<List<? extends String>> silenceUs;
 		
 		public General(ForgeConfigSpec.Builder builder) {
 			builder.push("General");
 			silenceWither = builder
-					.comment("Silence the server-wide Wither spawn broadcast sound.")
+					.comment("Silence the server-wide Wither spawn and death broadcast sounds.")
 					.translation("config.silenceWither")
 					.define("silenceWither", true);
+			silenceTrader = builder
+					.comment("Silence the wandering trader's ambient sound.")
+					.translation("config.silenceTrader")
+					.define("silenceTrader",true);
 			silenceDragon = builder
 					.comment("Silence the server-wide Ender Dragon Death broadcast sound.")
 					.translation("config.silenceDragon")
@@ -33,15 +38,15 @@ public class BWNCR_Config {
 					.comment("Silence the server-wide Thunder broadcast sound caused by the Lightning event")
 					.translation("config.silenceLightning")
 					.define("silenceLightning", true);
-			silenceSuccess = builder
-					.comment("Silence the server messages in console for when any of these sounds have been silenced.")
-					.translation("config.silenceSuccess")
-					.define("silenceSuccess", true);
 			silenceUs = builder
 					.comment("A list of sounds to silence, discoverable with the toggle command /listen ",
 							"enter one sound event per line with no commas.")
 					.translation("config.silenceUs")
 					.define("silenceUs", DefaultValue);
+			debugMode = builder
+					.comment("If enabled the console will load up spam showing what sounds are being received and whether or not they are being canceled")
+					.translation("config.debugMode")
+					.define("debugMode",false);
 			builder.pop();
 		}
 	}
