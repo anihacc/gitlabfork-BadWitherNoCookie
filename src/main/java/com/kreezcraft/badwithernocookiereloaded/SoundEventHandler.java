@@ -2,6 +2,8 @@ package com.kreezcraft.badwithernocookiereloaded;
 
 import java.util.Arrays;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
@@ -20,7 +22,7 @@ public class SoundEventHandler {
     	final boolean theSilence = BWNCR_Config.general.silenceSuccess;
     	
         // Disable the Wither spawn broadcast sound if it is configed to do so
-        if ((event.getName().equals("entity.wither.spawn")) &&
+        if ((event.getName().equals("entity.wither.spawn") || event.getName().equals("entity.wither.death")) &&
         		BWNCR_Config.general.silenceWither) {
             if(!theSilence) {
             	System.out.println("WITHER SOUND SILENCED!!!");
@@ -29,7 +31,7 @@ public class SoundEventHandler {
         }
 
         // Disable the Ender Dragon death broadcast sound if it is configed to do so
-        if ((event.getName().equals("entity.enderdragon.death")) &&
+		if ((event.getName().equals("entity.enderdragon.death")) &&
         		BWNCR_Config.general.silenceDragon) {
         	if(!theSilence) {
         		System.out.println("ENDER DRAGON SOUND SILENCED!!!");
