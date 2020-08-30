@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 public class BadWitherNoCookie {
     public static final String MODID = "badwithernocookiereloaded";
     public static final String NAME = "Bad Wither No Cookie! Reloaded";
-    public static final String VERSION = "1.12.2-3.3.16";
+    public static final String VERSION = "1.12.2-3.4.18";
     
     public static Logger logger;
     
@@ -42,6 +42,10 @@ public class BadWitherNoCookie {
     @EventHandler
     @SideOnly(Side.CLIENT)
     public void init(FMLInitializationEvent event) {
+        boolean god = false;
+        if(god) {
+            System.out.println("God has shown up to code!");
+        }
         // Register event handler to do the real work
         MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
     }
