@@ -2,12 +2,10 @@ package com.kreezcraft.badwithernocookiereloaded;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,29 +16,19 @@ public class BadWitherNoCookie {
 
 	public static BadWitherNoCookie instance;
 
-	public static PlayerEntity player;
-	
-	public static SideProxy proxy = DistExecutor.runForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
+	public static PlayerEntity player = null;
+	public static Boolean whatWasThat = false;
 
 	public BadWitherNoCookie() {
-
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BWNCR_Config.spec);
-		
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(BadWitherNoCookie::clientSetup);
-		
-		MinecraftForge.EVENT_BUS.register(this);
+
+		MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
+		MinecraftForge.EVENT_BUS.addListener(this::onCommandRegister);
+
 		instance = this;
 	}
 
-	private static void clientSetup(FMLClientSetupEvent event) {
-    	proxy.clientSetup(event);
-    }
-
-    /*
-	@SubscribeEvent
-	public void serverStarting(FMLServerStartingEvent event) {
-		//proxy.serverStarting(event);
-		ListenCommand.register(event.getCommandDispatcher());
+	public void onCommandRegister(RegisterCommandsEvent event) {
+		ListenCommand.register(event.getDispatcher());
 	}
-*/
 }

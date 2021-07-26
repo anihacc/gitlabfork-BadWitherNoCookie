@@ -1,9 +1,9 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraftforge.common.ForgeConfigSpec;
+
+import java.util.Collections;
+import java.util.List;
 
 public class BWNCR_Config {
 	
@@ -11,13 +11,11 @@ public class BWNCR_Config {
     public static final General GENERAL = new General(BUILDER);
 	
 	public static class General {
-		
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceWither;
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceDragon;
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceLightning;
 		public final ForgeConfigSpec.ConfigValue<Boolean> debugMode;
 		public final ForgeConfigSpec.ConfigValue<Boolean> silenceTrader;
-		private static List<String> DefaultValue = new ArrayList<String>();
 		public final ForgeConfigSpec.ConfigValue<List<? extends String>> silenceUs;
 		
 		public General(ForgeConfigSpec.Builder builder) {
@@ -42,7 +40,7 @@ public class BWNCR_Config {
 					.comment("A list of sounds to silence, discoverable with the toggle command /listen ",
 							"enter one sound event per line with no commas.")
 					.translation("config.silenceUs")
-					.define("silenceUs", DefaultValue);
+					.defineListAllowEmpty(Collections.singletonList("silenceUs"), () -> Collections.singletonList(""), o -> (o instanceof String));
 			debugMode = builder
 					.comment("If enabled the console will load up spam showing what sounds are being received and whether or not they are being canceled")
 					.translation("config.debugMode")
