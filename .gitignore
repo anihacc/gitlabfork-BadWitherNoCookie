@@ -1,22 +1,25 @@
-/bin/
-/BadWitherNoCookie_Client.launch
-/BadWitherNoCookie_Server.launch
-/build/
-/eclipse/
-/gradle.properties
-/gradle/
-/gradlew
-/gradlew.bat
-/run/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-\.gradle/2\.14/taskArtifacts/
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
 
-\.gradle/
+# gradle
+build
+.gradle
 
-\.project
+# other
+eclipse
+run
 
-\.settings/
-
-\.classpath
-
-.idea/
+# Files from Forge MDK
+forge*changelog.txt
