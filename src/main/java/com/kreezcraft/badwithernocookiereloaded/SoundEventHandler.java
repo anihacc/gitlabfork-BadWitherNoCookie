@@ -1,16 +1,15 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
-import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.util.Util;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 /**
  * Originally created by droidicus.
- * Now heavily modifed by Kreezxil
+ * Now heavily modified by Kreezxil
  */
 public class SoundEventHandler {
     final boolean debugMode = BWNCR_Config.GENERAL.debugMode.get();
@@ -60,9 +59,9 @@ public class SoundEventHandler {
 
         if (BadWitherNoCookie.whatWasThat) {
             if(BadWitherNoCookie.player == null) {
-                BadWitherNoCookie.LOGGER.info(new StringTextComponent(TextFormatting.AQUA + "Sound is " + TextFormatting.RED + event.getName()));
+                BadWitherNoCookie.LOGGER.info(new TextComponent(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()));
             } else {
-                BadWitherNoCookie.player.sendMessage(new StringTextComponent(TextFormatting.AQUA + "Sound is " + TextFormatting.RED + event.getName()), Util.DUMMY_UUID);
+                BadWitherNoCookie.player.sendMessage(new TextComponent(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()), Util.NIL_UUID);
             }
         }
     }

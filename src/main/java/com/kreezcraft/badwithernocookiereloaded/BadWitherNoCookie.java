@@ -1,6 +1,6 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -16,7 +16,7 @@ public class BadWitherNoCookie {
 
 	public static BadWitherNoCookie instance;
 
-	public static PlayerEntity player = null;
+	public static Player player = null;
 	public static Boolean whatWasThat = false;
 
 	public BadWitherNoCookie() {
