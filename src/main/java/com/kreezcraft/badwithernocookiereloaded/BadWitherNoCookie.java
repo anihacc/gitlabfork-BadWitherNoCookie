@@ -1,8 +1,10 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -22,10 +24,13 @@ public class BadWitherNoCookie {
 	public BadWitherNoCookie() {
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BWNCR_Config.spec);
 
-		MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
 		MinecraftForge.EVENT_BUS.addListener(this::onCommandRegister);
 
 		instance = this;
+
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+			MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
+		});
 	}
 
 	public void onCommandRegister(RegisterCommandsEvent event) {

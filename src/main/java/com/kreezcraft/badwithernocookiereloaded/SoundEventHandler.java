@@ -1,6 +1,5 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
-import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -13,14 +12,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
  * Now heavily modifed by Kreezxil
  */
 public class SoundEventHandler {
-    final boolean debugMode = BWNCR_Config.GENERAL.debugMode.get();
-
     private void debugMsg(String msg) {
-        if (debugMode)
+        if (BWNCR_Config.GENERAL.debugMode.get())
             BadWitherNoCookie.LOGGER.info(msg);
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = false)
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void onEvent(PlaySoundEvent event) {
         debugMsg("Intercepted " + event.getName());
 
@@ -38,13 +35,13 @@ public class SoundEventHandler {
             event.setResultSound(null);
         }
 
-        if (event.getName().equals("entity.enderdragon.death") && BWNCR_Config.GENERAL.silenceDragon.get()) {
+        if (event.getName().equals("entity.ender_dragon.death") && BWNCR_Config.GENERAL.silenceDragon.get()) {
             debugMsg("Silencing the ender dragon death");
             event.setResultSound(null);
         }
 
         // Disable the Thunderous Lightning broadcast sound if it is configed to do so
-        if (event.getName().equals("entity.lightning.thunder") && BWNCR_Config.GENERAL.silenceLightning.get()) {
+        if (event.getName().equals("entity.lightning_bolt.thunder") && BWNCR_Config.GENERAL.silenceLightning.get()) {
             debugMsg("Silencing thunder");
             event.setResultSound(null);
         }
