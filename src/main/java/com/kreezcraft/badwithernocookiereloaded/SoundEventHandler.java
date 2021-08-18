@@ -17,7 +17,7 @@ public class SoundEventHandler {
             BadWitherNoCookie.LOGGER.info(msg);
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = false)
     public void onEvent(PlaySoundEvent event) {
         debugMsg("Intercepted " + event.getName());
 
