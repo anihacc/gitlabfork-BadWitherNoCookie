@@ -12,10 +12,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
  * Now heavily modified by Kreezxil
  */
 public class SoundEventHandler {
-    final boolean debugMode = BWNCR_Config.GENERAL.debugMode.get();
-
     private void debugMsg(String msg) {
-        if (debugMode)
+        if (BWNCR_Config.GENERAL.debugMode.get())
             BadWitherNoCookie.LOGGER.info(msg);
     }
 
