@@ -1,0 +1,8 @@
+{
+  "text.autoconfig.badwithernocookiereloaded.option.debug": "Debug Mode",
+  "text.autoconfig.badwithernocookiereloaded.option.soundsToSilence": "Sounds To Silence",
+  "bwncr.mute.success": "Silenced Sound!",
+  "bwncr.sound": "Sounds: %s",
+  "bwncr.listen.enable": "Enabled Sound Listening",
+  "bwncr.listen.disable": "Disabled Sound Listening"
+}

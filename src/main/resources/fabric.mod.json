@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "badwithernocookiereloaded",
+  "version": "${version}",
+  "name": "Bad Wither No Cookie! Reloaded",
+  "description": "A simple mod to silence the Wither and Dragon broadcast sounds.",
+  "authors": [
+    "droidicus",
+    "Kreezxil",
+    "Eleksploded"
+  ],
+  "contact": {
+    "website": "https://www.curseforge.com/minecraft/mc-mods/bad-wither-no-cookie-reloaded",
+    "repo": "https://gitlab.com/kreezxil/BadWitherNoCookie/",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/bad-wither-no-cookie-reloaded",
+    "sources": "https://gitlab.com/kreezxil/BadWitherNoCookie/",
+    "issues": "https://gitlab.com/kreezxil/BadWitherNoCookie/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/badwithernocookiereloaded/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.kreezcraft.badwithernocookiereloaded.client.BadwithernocookiereloadedClient"
+    ],
+    "main": [
+      "com.kreezcraft.badwithernocookiereloaded.Badwithernocookiereloaded"
+    ],
+    "modmenu": [
+      "com.kreezcraft.badwithernocookiereloaded.client.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "bwncrmixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.1",
+    "cloth-config": "6.1.48"
+  },
+  "custom": {
+    "modupdater": {
+      "strategy": "curseforge",
+      "projectID": 261251,
+      "strict": false
+    }
+  }
+}

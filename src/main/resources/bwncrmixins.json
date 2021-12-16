@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.kreezcraft.badwithernocookiereloaded.client.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "SoundMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
