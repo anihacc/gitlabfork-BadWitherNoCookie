@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[38,)"
+issueTrackerURL="https://gitlab.com/kreezxil/BadWitherNoCookie/-/issues"
+license="MIT"
+
+[[mods]]
+modId="bwncr"
+version="${file.jarVersion}"
+displayName="Bad Wither No Cookie Reloaded"
+displayURL="https://minecraft.curseforge.com/projects/bad-wither-no-cookie-reloaded"
+authors="Kreezxil, Eleksploded"
+description='''
+Silence server level sounds making them local in the process.
+
+Other sounds can be silenced even further such as sheep
+eating grass, cows mooing, you name it.
+
+If it makes a sound it can be silenced!
+'''
+credits="Thanks to Lex and Team for keeping modding alive."
+
+[[dependencies.bwncr]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.18,)"
+ordering="NONE"
+side="BOTH"
