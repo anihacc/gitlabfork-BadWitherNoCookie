@@ -27,32 +27,32 @@ public class SoundEventHandler {
         if ((event.getName().equals("entity.wither.spawn") || event.getName().equalsIgnoreCase("entity.wither.death")) &&
                 BWNCR_Config.GENERAL.silenceWither.get()) {
             debugMsg("Silencing the wither's death.");
-            event.setResultSound(null);
+            event.setSound(null);
         }
 
         if ((event.getName().equalsIgnoreCase("entity.wandering_trader.ambient") ||
                 event.getName().equalsIgnoreCase("entity.llama.ambient")) &&
                 BWNCR_Config.GENERAL.silenceTrader.get()) {
             debugMsg("Silencing wandering trader and llama ambient sounds.");
-            event.setResultSound(null);
+            event.setSound(null);
         }
 
         if (event.getName().equals("entity.enderdragon.death") && BWNCR_Config.GENERAL.silenceDragon.get()) {
             debugMsg("Silencing the ender dragon death");
-            event.setResultSound(null);
+            event.setSound(null);
         }
 
         // Disable the Thunderous Lightning broadcast sound if it is configed to do so
         if (event.getName().equals("entity.lightning.thunder") && BWNCR_Config.GENERAL.silenceLightning.get()) {
             debugMsg("Silencing thunder");
-            event.setResultSound(null);
+            event.setSound(null);
         }
 
         if (!BWNCR_Config.GENERAL.silenceUs.get().isEmpty()) {
             for (String soundName : BWNCR_Config.GENERAL.silenceUs.get()) {
                 if ((event.getName().equals(soundName))) {
                     debugMsg("Silencing " + soundName);
-                    event.setResultSound(null);
+                    event.setSound(null);
                 }
             }
         }
