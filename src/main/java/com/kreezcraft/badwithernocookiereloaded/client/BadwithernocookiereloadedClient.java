@@ -4,7 +4,7 @@ import com.kreezcraft.badwithernocookiereloaded.client.config.BwncrConfig;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -27,7 +27,7 @@ public class BadwithernocookiereloadedClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         instance = this;
-        AutoConfig.register(BwncrConfig.class, GsonConfigSerializer::new);
+        AutoConfig.register(BwncrConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(BwncrConfig.class).getConfig();
 
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {

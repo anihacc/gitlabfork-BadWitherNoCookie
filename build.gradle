@@ -30,7 +30,7 @@ dependencies {
 
     modImplementation "com.terraformersmc:modmenu:3.0.0"
 
-    modApi("me.shedaniel.cloth:cloth-config-fabric:6.1.48") {
+    modApi("me.shedaniel.cloth:cloth-config-fabric:6.2.57") {
         exclude(group: "net.fabricmc.fabric-api")
     }
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
