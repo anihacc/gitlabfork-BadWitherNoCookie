@@ -37,7 +37,7 @@ public class SoundEventHandler {
             event.setSound(null);
         }
 
-        if (event.getName().equals("entity.enderdragon.death") && BWNCR_Config.GENERAL.silenceDragon.get()) {
+        if (event.getName().equals("entity.ender_dragon.death") && BWNCR_Config.GENERAL.silenceDragon.get()) {
             debugMsg("Silencing the ender dragon death");
             event.setSound(null);
         }
