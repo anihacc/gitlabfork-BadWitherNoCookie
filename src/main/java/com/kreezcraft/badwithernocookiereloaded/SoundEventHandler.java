@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 /**
  * Originally created by droidicus.
- * Now heavily modified by Kreezxil
+ * Now heavily modified by Kreezxil, MrBysco, and others.
  */
 public class SoundEventHandler {
     final boolean debugMode = BWNCR_Config.GENERAL.debugMode.get();
