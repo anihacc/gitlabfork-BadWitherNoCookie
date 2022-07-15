@@ -1,0 +1,5 @@
+{
+  "bwncr.listening.on": "Event Listening is now on",
+  "bwncr.listening.off": "Event Listening is now off",
+  "bwncr.listening.sound": "Sound: %s"
+}

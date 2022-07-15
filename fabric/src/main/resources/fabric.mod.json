@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "bwncr",
+  "version": "${version}",
+  "name": "BWNCR",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.kreezxil.bwncr.fabric.BWNCRFabric"
+    ]
+  },
+  "mixins": [
+    "bwncr.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "minecraft": ">=1.19"
+  }
+}
