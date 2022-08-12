@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Originally created by droidicus.
- * Now heavily modified by Kreezxil
+ * Now heavily modified by Kreezxil, MrBysco, and others.
  */
 public class SoundHandler {
 	public static boolean silenceWither;

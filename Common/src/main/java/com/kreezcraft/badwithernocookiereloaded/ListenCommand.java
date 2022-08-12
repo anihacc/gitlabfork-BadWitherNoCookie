@@ -13,7 +13,7 @@ public final class ListenCommand {
 	
 	public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
 		final LiteralArgumentBuilder<CommandSourceStack> root = Commands.literal("bwncr");
-		root.requires(source -> source.hasPermission(2) || source.getServer().isSingleplayer())
+		root.requires(source -> source.hasPermission(2) /*|| source.getServer().isSingleplayer()*/)
 				.then(Commands.literal("listen").executes((command) -> {
 						if(CommonClass.whatWasThat) {
 							CommonClass.whatWasThat = false;
