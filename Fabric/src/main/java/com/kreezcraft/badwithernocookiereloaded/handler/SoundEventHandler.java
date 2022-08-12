@@ -1,6 +1,7 @@
 package com.kreezcraft.badwithernocookiereloaded.handler;
 
 import com.kreezcraft.badwithernocookiereloaded.BWNCR_Config;
+import com.kreezcraft.badwithernocookiereloaded.CommonClass;
 import com.kreezcraft.badwithernocookiereloaded.ProxyPlaySoundEvent;
 import com.kreezcraft.badwithernocookiereloaded.SoundHandler;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -15,6 +16,7 @@ public class SoundEventHandler {
         SoundHandler.silenceDragon = config.general.silenceDragon;
         SoundHandler.silenceLightning = config.general.silenceLightning;
         SoundHandler.silenceUs = config.general.silenceUs;
+        CommonClass.debugMode = config.general.debugMode;
 
         ProxyPlaySoundEvent proxy = SoundHandler.onPlaySound(event);
         return proxy;

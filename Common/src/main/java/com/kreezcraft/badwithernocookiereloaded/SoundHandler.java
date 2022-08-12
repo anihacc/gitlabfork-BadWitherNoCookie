@@ -1,8 +1,7 @@
 package com.kreezcraft.badwithernocookiereloaded;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
@@ -61,9 +60,9 @@ public class SoundHandler {
 
 		if (CommonClass.whatWasThat) {
 			if(CommonClass.player == null) {
-				Constants.LOGGER.info(new TextComponent(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()));
+				Constants.LOGGER.info(Component.literal(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()));
 			} else {
-				CommonClass.player.sendMessage(new TextComponent(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()), Util.NIL_UUID);
+				CommonClass.player.sendSystemMessage(Component.literal(ChatFormatting.AQUA + "Sound is " + ChatFormatting.RED + event.getName()));
 			}
 		}
 
