@@ -1,4 +1,5 @@
 subprojects {
+
     apply plugin: 'java'
 
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -32,6 +33,7 @@ subprojects {
     }
 
     repositories {
+
         mavenCentral()
 
         maven {
@@ -40,19 +42,13 @@ subprojects {
         }
 
         maven {
-            url = "https://maven.shedaniel.me/"
-        }
-
-        maven {
-            url "https://maven.terraformersmc.com/"
-            content {
-                includeGroup "com.terraformersmc"
-            }
+            name = 'BlameJared Maven (CrT / Bookshelf)'
+            url = 'https://maven.blamejared.com'
         }
     }
 
-
     tasks.withType(JavaCompile).configureEach {
+
         it.options.encoding = 'UTF-8'
         it.options.release = 17
     }
@@ -61,6 +57,7 @@ subprojects {
     // metadata includes mapped dependencies which are not reasonably consumable by
     // other mod developers.
     tasks.withType(GenerateModuleMetadata) {
+
         enabled = false
     }
 }
