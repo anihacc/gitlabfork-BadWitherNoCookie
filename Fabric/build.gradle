@@ -1,10 +1,22 @@
 plugins {
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'fabric-loom' version '1.1-SNAPSHOT'
     id 'maven-publish'
     id 'idea'
 }
 
 archivesBaseName = "${mod_name}-fabric-${minecraft_version}"
+
+repositories {
+    maven {
+        url "https://maven.shedaniel.me/"
+    }
+    maven {
+        url "https://maven.terraformersmc.com/"
+        content {
+            includeGroup "com.terraformersmc"
+        }
+    }
+}
 
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
@@ -13,6 +25,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
+
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+    modImplementation "com.terraformersmc:modmenu:${mod_menu_version}"
 }
 
 loom {
@@ -55,7 +72,6 @@ publishing {
             from components.java
         }
     }
-
     repositories {
         maven {
             url "file://" + System.getenv("local_maven")
